@@ -19,12 +19,15 @@ function getCourses(callback) {
 function createCourse(data){
     fetch(coursesApi,{
         method:'POST',
+        headers: {
+            "Content-Type": "application/json",
+          },
         body: JSON.stringify(data)
     })
         .then(function(res){
-            
-
+            res.join();
         })
+        .then(callback)
         .catch(function(){
             console.log('Call API POST lỗi')
         })
@@ -32,11 +35,13 @@ function createCourse(data){
 }
 function renderCourses(courses) {
   var listCoursesBlock = document.querySelector("#list-courses");
+  console.log('render')
   var htmls = courses.map(function (course) {
     return `
     <li>
         <h1>${course.name}</h1>
         <p>${course.description}</p>
+        <button onclick='handleDeleteCourse(${course.id})'>Xóa</button>
     </li>
     
     `
@@ -53,6 +58,31 @@ function handleCreateForm(){
         var name= document.querySelector('input[name="name"]').value;
         console.log(name)
         var description= document.querySelector('input[name="description"]').value;
-        console.log(description)
+        console.log(description);
+        var formData= {
+            name: name,
+            description:description
+        }
+        createCourse(formData, function(){
+            getCourses(renderCourses);
+        });
     }
+}
+
+function deleteCourse (id){
+    fetch(coursesApi + '/' +id,{
+        method:'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+          },
+        
+    })
+        .then(()=>{console.log('Xoa thanh cong')})
+        .catch(function(){
+            console.log('Call API POST lỗi')
+        })
+
+}
+function handleDeleteCourse(id){
+    deleteCourse(id);
 }

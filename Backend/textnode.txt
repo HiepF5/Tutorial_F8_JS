@@ -1,0 +1,5 @@
+1.npm init
+2.npm i json-server / npm install -g json-server
+3.json-server --watch db.json
+Có thể setting package.json
+  "start": "json-server --watch db.json", => npm start
