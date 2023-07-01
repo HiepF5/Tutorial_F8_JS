@@ -1,0 +1,19 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Học Lập Trình Để Đi Làm",
+      "description": "Lĩnh vực: Công nghệ, giáo dục, lập trình. F8 xây dựng và phát triển những sản phẩm mang lại giá trị cho cộng đồng"
+    },
+    {
+      "id": 2,
+      "name": "VỀ F8",
+      "description": "Video mang quan điểm và trải nghiệm của cá nhân mình, miễn bàn chuyện đúng/sai. Những gì phù hợp với bạn thì bạn áp dụng, không phù hợp thì bỏ qua nha."
+    },
+    {
+      "id": 3,
+      "name": "Mục tiêu rõ ràng",
+      "description": "Bạn cần có mục tiêu cho việc làm của mình, học lập trình cũng vậy, từ đó bạn sẽ lên được lộ trình học lập trình và phương pháp học lập trình phù hợp với bản thân hơn. Nếu không có mục tiêu thì bạn sẽ không thể tìm ra được lộ trình học lập trình đâu nhé."
+    }
+  ]
+}
