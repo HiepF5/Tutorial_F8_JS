@@ -4,7 +4,7 @@
 // 3.Multi - line String
 // 4.Arrow function
 // 5.Classes
-// 6.Defaulr parameter values
+// 6.Default parameter values
 // 7.Destructuring
 // 8.Rest parameters
 // 9.Spread
@@ -103,9 +103,90 @@ logger6(undefined);
 // Định nghĩa key object 
 
 // 7.Destructuring
-
+// Destructuring array (mảng):
 var arr =['1','2','3'];
 var [a,b,c] = arr;
 console.log(a,b,c);
 var [a, ,...rest] = arr;
 console.log(rest)
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Rút gọn và trích xuất giá trị từ mảng
+const [first, second, ...rest2] = numbers;
+
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(rest2); // Output: [3, 4, 5]
+
+// Destructuring object (đối tượng)
+var course = {
+  name1: 'JS',
+  price : 1000,
+  image: 'image-address'
+};
+var {name1, ...newObject} = course;
+console.log(newObject)
+
+const person = {
+  name: 'John',
+  age: 30,
+  gender: 'male'
+};
+
+// Rút gọn và trích xuất giá trị từ đối tượng
+const { name, age, gender } = person;
+
+console.log(name); // Output: John
+console.log(age); // Output: 30
+console.log(gender); // Output: male
+
+// Rest parameters
+function sum(...numbers) {
+  let total = 0;
+  for (let number of numbers) {
+    total += number;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+console.log(sum(10, 20, 30)); // Output: 60
+
+// Spread là gì, ví dụ
+// Spread là một cú pháp trong JavaScript 
+// cho phép chúng ta "phân rã" (spread) các phần tử của 
+// một mảng hoặc các thuộc tính của một đối tượng vào một vị trí khác.
+// Phân rã mảng (Spread array)
+const numbers2 = [1, 2, 3];
+
+const combined = [...numbers2, 4, 5, 6];
+
+console.log(combined); // Output: [1, 2, 3, 4, 5, 6]
+
+// Phân rã đối tượng (Spread object)
+const person2 = {
+  name: 'John',
+  age: 30,
+};
+
+const newPerson = {
+  ...person2,
+  gender: 'male',
+};
+
+console.log(newPerson);
+// Output: { name: 'John', age: 30, gender: 'male' }
+// phân biệt giữa spread và rest parameters ChatGPT
+
+// Tagged template literals
+
+// Modules : Import và export 
+import l12_1 , { TYPE_LOG, TYPE_WARN,TYPE_ERROR} from "./l12_1.js";
+// import * as l12_1 from "./l12_1.js";
+console.log(l12_1);
+console.log(TYPE_ERROR)
+
+
+// Optional chaining (?.)
