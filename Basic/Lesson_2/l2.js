@@ -64,7 +64,7 @@ Callback function
 // 6. unShift : Thêm đầu - return length mới
 // 7. Splice : Xóa, cắt chèn splice( index,quantity, replace )
 // 8. concat : Nối Array
-// 9. Slice : Cắt , slice( begin, end)
+// 9. Slice : Cắt , slice( begin, end). sao chép mảng
 
 // Work with Object
 // var myObject = {
